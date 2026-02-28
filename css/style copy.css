@@ -1,0 +1,17 @@
+header {
+    background-color: #fff;
+    width: 70%;
+    height: 30%;
+}
+
+body {
+background: #ffec5e;
+background: linear-gradient(90deg, rgba(255, 236, 94, 1) 100%, rgba(255, 255, 255, 1) 0%);;
+}   
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    background-color: yellow;
+    color: aqua;
+}
