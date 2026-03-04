@@ -29,8 +29,6 @@ header {
 
     /* alinhamento vertical */
     align-items: center;
-
-
     font-size: 20px;
     
 }
@@ -41,14 +39,38 @@ h1 {
 }
 
 .menu-desktop{ 
-    display: none;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: auto;
+}
+
+/* .MENU = UL */
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    align-items: center;
+    margin:auto;
+    gap:20px;
+}
+
+.menu-texto {
 
 }
 
 /*Responsivo*/
 
+/* A partir de Telas Grandes */ 
 @media (min-width: 768px) {
     .menu-desktop { 
         display: flex;
+
+    }
+
+    header {
+        /* Cada rem indica uma direção do padding */
+        padding: 1rem 6rem;
+
     }
 }
