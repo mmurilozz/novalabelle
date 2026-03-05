@@ -2,9 +2,26 @@
 
 
 /* Fontes Utilizadas */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Variáveis de Fonts */
+:root {
+    --fonte-memu: "Libre Franklin", sans-serif;
+    --fonte-titulo: 
+
+}
+
+/* Variáveis de Cores */
+:root {
+    --cor-destaque: #7c5918;
+    --cor-menu-padrao: #d4d4d4;
+}
 
 
 /* Reset CSS = Padronizar os Navegadores */
+
+
 
 * { 
     margin: 0;
@@ -52,22 +69,36 @@ h1 {
     justify-content: end;
     align-items: center;
     margin:auto;
+    /* Espaço entre itens */
     gap:20px;
 }
 
 .menu-texto {
-
+     color: var(--cor-menu-padrao);
+     /* Transformação de texto */
+     text-transform: capitalize;
+     font-size: 1.12rem; /* = 18px */
+     /* OU 1.8rem = 18px */
+     /* Cada REM tem 16px */
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* Herança */
+.menu-link.active .menu-texto, .menu-link:hover{
+    color: var(--cor-destaque);
+}
+
+.menu-link {
+    text-decoration: none;
+
+}
 /*Responsivo*/
 
 /* A partir de Telas Grandes */ 
 @media (min-width: 768px) {
     .menu-desktop { 
         display: flex;
-
     }
-
     header {
         /* Cada rem indica uma direção do padding */
         padding: 1rem 6rem;
