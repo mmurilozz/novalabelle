@@ -3,12 +3,13 @@
 
 /* Fontes Utilizadas */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
 
 
 /* Variáveis de Fonts */
 :root {
     --fonte-memu: "Libre Franklin", sans-serif;
-    --fonte-titulo: 
+    --fonte-menun: "Story Script", sans-serif;
 }
 
 /* Variáveis de Cores */
@@ -20,17 +21,19 @@
 /* tema escruro */
 :root, :root[data-theme='dark'] {
 
-    --cor-fundo: #967f47;
-    --cor-fundo-secundaria: #726f68;
+    --cor-fundo: #c59f15;
+    --cor-fundo-secundaria: #494743;
     --cor-txt-menu: #ffffff;
     --cor-icone: #fff;
+    --cor-titulo: #fff;
 }
 
 
 /* tema claro */
 :root[data-theme='light'] {
-    --cor-fundo: #e7c967;
-    --cor-fundo-secundaria: #dbd8cd;
+    --cor-fundo: #f8cd57;
+    --cor-fundo-secundaria: #ffffff;
+    --cor-titulo: #000;
 }
 
 
@@ -50,10 +53,10 @@ html [data-theme='light'] .logo {
     scrollbar-color: transparent;   
 }
 
-body {
-background-color: var(--cor-fundo-secundaria);
-
+#body {
+background-color: var(--cor-fundo-secundaria)
 }   
+
 header {
     background-color: var(--cor-fundo);
     width: 100%;
@@ -69,6 +72,11 @@ header {
     font-size: 20px;
     
 }
+
+#titulo {
+    font-size: 6rem;
+}
+
 h1 {
     font-size: 50px;    
     text-align: center;
@@ -112,7 +120,7 @@ h1 {
      font-size: 1.12rem; /* = 18px */
      /* OU 1.8rem = 18px */
      /* Cada REM tem 16px */
-     font-family: var(--fonte-memu);
+     font-family: var(--fonte-menun);
      
 }
 
@@ -128,6 +136,11 @@ h1 {
 .menu-link {
     text-decoration: none;
 
+}
+
+/* HOME */
+#titulo  {
+    color: var(--cor-titulo);
 }
 
 
