@@ -12,11 +12,6 @@
     --fonte-menun: "Story Script", sans-serif;
 }
 
-/* Variáveis de Cores */
-/* :root {
-    --cor-destaque: #000000;
-    --cor-menu-padrao: #d6c5c5;
-} */
 
 /* tema escruro */
 :root, :root[data-theme='dark'] {
@@ -26,6 +21,9 @@
     --cor-icone: #fff;
     --cor-titulo: #fff;
     --destaque-icone: #ffc400;
+    /* o "a" em rgba significa alpha, representando a transparência */
+    --cor-borda: #c5c3c3;
+    
 }
 
 
@@ -35,6 +33,7 @@
     --cor-fundo-secundaria: #ffffff;
     --cor-titulo: #000;
     --cor-icone: #2b2929;
+    --cor-borda: #000000;
 }
 
 
@@ -44,10 +43,6 @@ html [data-theme='light'] .logo {
 }
 
 */
-
-.video {
-    margin: 30px;
-}
 
 * { 
     margin: 0;
@@ -64,12 +59,80 @@ html [data-theme='light'] .logo {
 
 .carousel .carousel-item img,
 .carousel  .carousel-item .ratio {
+     /* Tamanho mínimo de 400px */
     height: 100%;
     object-fit: cover;
     object-position: center;
     pointer-events: none;
 }
 
+/* Filtro ou Overlay escuro sutil */
+
+/* Pseudo-Elemento */
+.carousel .carousel-item::before {
+    content: "";
+    background: #cccccc85; 
+    position: absolute;
+    inset: 0; /* Define os valores de cada direção */
+
+    /* Posições podem ser alteradas por direções discriminadas */
+}
+
+.carousel .carousel-caption{
+    position: absolute;
+    inset: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+
+}
+
+.carousel h5 {
+    font-size: 5rem;
+    color: #ffd666;
+}
+
+.carousel p {
+    font-size: 2.5rem;
+}
+
+.carousel h5, 
+.carousel p {
+ 
+    text-shadow: 0px 2px 14px rgba(0, 0, 0, 0.719);
+}
+
+.video {
+    margin: 30px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.video iframe {
+    aspect-ratio: 16/9;
+    width: 45ww; /* tamanho responsivo para o vídeo */
+    box-shadow: 2px /* Eixo X */ 3px /* Eixo Y */ 10px /* Blur */ 10px #ffffff89;
+}
+
+.complemento {
+    display: flex;
+    background: var(--cor-fundo);
+    padding: 6rem 1rem 2rem; /* Quando tem 3 valores, o do meio é para direita e esquerda igualmente */
+    margin-top: -5rem;
+}
+
+.complemento h2 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 3rem;
+    font-family: var(--fonte-menu);
+    color: var(--cor-titulo);
+}
 
 #body {
 background-color: var(--cor-fundo-secundaria);
@@ -78,7 +141,7 @@ background-color: var(--cor-fundo-secundaria);
 header {
     background-color: var(--cor-fundo);
     width: 100%;
-    height: 70%;
+    height: 20%;
     /* deixa um embaixo do outro */
     display: flex;
 
@@ -87,8 +150,12 @@ header {
 
     /* alinhamento vertical */
     align-items: center;
+
+    position: fixed;
+    z-index: 200px; /* Sobreposição */
     font-size: 20px;
-    
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--cor-borda);
 }
 
 #titulo {
@@ -184,18 +251,85 @@ p {
     font-size: 2.1rem;
 }
 
+#home {
+    padding: 4rem 2rem;
+}
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+
+/* Largura até */
+@media (max-width: 768px) {
+    .carousel .carousel-inner {
+        margin-top: -2rem;
+    }
+
+    #home {
+        padding-top: 60px;
+    }
+
+
+}
 
 /*Responsivo*/
 
 /* A partir de Telas Grandes */ 
 @media (min-width: 768px) {
-    .menu-desktop { 
-        display: flex;
-    }
+    
     header {
         /* Cada rem indica uma direção do padding */
-        padding: 1rem 6rem;
+        padding: 1rem 10rem;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
 
+    .menu-desktop { 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+
+    .carousel .carousel-inner {
+        margin-top: -4.2rem;
+        padding-top: 7rem;
+    }
+
+    #home {
+        padding: 4rem 10rem;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    h1 {
+        font-size: 6.5rem;
+    }
+
+    .complemento {
+        padding: 5rem 7rem 4rem;
+        margin-top: -7rem;
+    }
+
+    .complemento h2 {
+        font-size: 4.5rem;
     }
 }
