@@ -99,8 +99,7 @@ html [data-theme='light'] .logo {
 }
 
 .carousel h5, 
-.carousel p {
- 
+.carousel p { 
     text-shadow: 0px 2px 14px rgba(0, 0, 0, 0.719);
 }
 
@@ -167,7 +166,7 @@ h1 {
     text-align: center;
     color: rgb(190, 156, 0);
 }
-
+    
 p {
     color: var(--cor-txt-menu);
     font-size: 1.8rem;
@@ -251,8 +250,18 @@ p {
     font-size: 2.1rem;
 }
 
-#home {
+#home,
+.vestidos {
     padding: 4rem 2rem;
+}
+
+.vestidos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: var(--fonte-memu);
+    color: var(--cor-titulo);
+    font-weight: 400; /* Define espessura da fonte */
+     text-transform: capitalize;
 }
 
 .main-content {
@@ -261,6 +270,23 @@ p {
     gap: 2rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
+}
+
+/* Vestidos */
+.vestidos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* Voltar */
+    scroll-margin-top: ;
+}
+
+.card-cover {
+    display: flex;
+    margin: 2rem 2rem;
+    gap: 10px;
+    width: 20dvw;
+    height: 40dvh;
 }
 
 
@@ -304,8 +330,14 @@ p {
         padding-top: 7rem;
     }
 
-    #home {
+    .complemento {
         padding: 4rem 10rem;
+        margin-top: -7px;
+    }
+    
+    /* Voltar aqui */
+    .projetos {
+        padding: 10rem 7rem 4rem;
     }
 
     .main-content {
@@ -317,14 +349,34 @@ p {
     h1 {
         font-size: 5rem;
     }
+
+    .projetos h2 {
+        font-size: 3.3rem;
+
+    }
+
+    .complemento h2 {
+        font-size: 4.5rem;
+    }
 }
+
+/* Telas maiores que 1200 */
+@media (min-width: 1200px) {
+    
+    h2 {
+        font-size: 8.5rem;
+    }
+
+}
+
 
 @media (min-width: 1400px) {
     h1 {
-        font-size: 6.5rem;
+        font-size: 7.5rem;
     }
 
-    .complemento {
+    .complemento,
+    .projetos {
         padding: 5rem 7rem 4rem;
         margin-top: -7rem;
     }
