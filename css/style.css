@@ -261,7 +261,8 @@ p {
     font-family: var(--fonte-memu);
     color: var(--cor-titulo);
     font-weight: 400; /* Define espessura da fonte */
-     text-transform: capitalize;
+    text-transform: capitalize;
+
 }
 
 .main-content {
@@ -283,12 +284,14 @@ p {
 
 .card-cover {
     display: flex;
-    margin: 2rem 2rem;
-    gap: 10px;
-    width: 20dvw;
-    height: 40dvh;
+    flex-direction: column;
 }
 
+.vestidos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
 
 /* Largura até */
 @media (max-width: 768px) {
