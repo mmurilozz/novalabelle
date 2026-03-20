@@ -34,6 +34,7 @@
     --cor-titulo: #000;
     --cor-icone: #2b2929;
     --cor-borda: #000000;
+    --cor-txt-menu: #000;
 }
 
 
@@ -152,9 +153,10 @@ header {
 
     position: fixed;
     z-index: 200px; /* Sobreposição */
-    font-size: 20px;
+
     padding: 0.5rem 1rem;
     border-bottom: 1px solid var(--cor-borda);
+    
 }
 
 #titulo {
@@ -207,9 +209,10 @@ p {
 .menu-texto {
      /* Transformação de texto */
      text-transform: capitalize;
-     font-size: 1.12rem; /* = 18px */
+     font-size: 2rem; /* = 18px */
      /* OU 1.8rem = 18px */
      /* Cada REM tem 16px */
+     letter-spacing: 0.2rem;
      font-family: var(--fonte-menun);
      
 }
@@ -273,17 +276,18 @@ p {
     margin-bottom: 3rem;
 }
 
+
 /* Vestidos */
 .vestidos {
-    display: flex;
-    flex-direction: column;
     gap: 2rem;
     /* Voltar */
-    scroll-margin-top: ;
 }
 
 .card-cover {
+    width: 100%;
+    object-fit: cover;
     display: flex;
+    border-radius: 5rem 50rem 50rem 5rem;
     flex-direction: column;
 }
 
@@ -291,6 +295,10 @@ p {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+}
+
+.card-body .card-title {
+    color: var(--cor-txt-menu);
 }
 
 /* Largura até */
@@ -339,7 +347,7 @@ p {
     }
     
     /* Voltar aqui */
-    .projetos {
+    .vestidos {
         padding: 10rem 7rem 4rem;
     }
 
@@ -362,6 +370,20 @@ p {
         font-size: 4.5rem;
     }
 }
+
+
+@media (min-width: 992px) {
+    .card-cover {
+        width: 40%;
+    }
+    
+    .card-reverse {
+        /* Reversão de posição do flex */
+        flex-direction: row-reverse;
+    }
+}
+
+
 
 /* Telas maiores que 1200 */
 @media (min-width: 1200px) {
