@@ -54,7 +54,8 @@ html [data-theme='light'] .logo {
 }
 
 .carousel .carousel-item {
-    height: 60vh;
+    margin-top: 6rem;
+    height: 50vh;
     min-height: 40vh; 
 }
 
@@ -72,7 +73,7 @@ html [data-theme='light'] .logo {
 /* Pseudo-Elemento */
 .carousel .carousel-item::before {
     content: "";
-    background: #cccccc85; 
+    background: #eceaea6e; 
     position: absolute;
     inset: 0; /* Define os valores de cada direção */
 
@@ -152,7 +153,7 @@ header {
     align-items: center;
 
     position: fixed;
-    z-index: 200px; /* Sobreposição */
+    z-index: 200; /* Sobreposição */
 
     padding: 0.5rem 1rem;
     border-bottom: 1px solid var(--cor-borda);
@@ -281,13 +282,20 @@ p {
 .vestidos {
     gap: 2rem;
     /* Voltar */
+    display: flex;
+    flex-direction: column;
+}
+
+.vestidos h2 {
+    color: var(--destaque-icone);
 }
 
 .card-cover {
-    width: 100%;
-    object-fit: cover;
+    width: 50%;
+    height: 55rem;
+
     display: flex;
-    border-radius: 5rem 50rem 50rem 5rem;
+    border-radius: 5rem 40rem 40rem 5rem;
     flex-direction: column;
 }
 
@@ -297,8 +305,52 @@ p {
     gap: 4rem;
 }
 
-.card-body .card-title {
+.card-body p {
     color: var(--cor-txt-menu);
+    font-family: var(--fonte-memu);
+    border-color: #000;
+    margin-left: 3rem;
+}
+
+.card-body .card-title {
+    color: var(--destaque-icone);
+}
+
+
+.vestidos-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-lista {
+    list-style: none;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: justify;
+}
+
+
+.card-body i {
+    color: var(--cor-txt-menu);
+    font-size: 2rem;
+}
+
+.card-body span {
+    var(--destaque-icone);
+}
+
+.card-body i:hover {
+    color: var(--destaque-icone);
+    transition: ease-in-out 0.3s;
+    font-size: 2.3rem;
+
 }
 
 /* Largura até */
@@ -373,8 +425,13 @@ p {
 
 
 @media (min-width: 992px) {
+    
+    .vestidos-card {
+        flex-direction: row;
+    }
+
     .card-cover {
-        width: 40%;
+        width: 55%;
     }
     
     .card-reverse {
