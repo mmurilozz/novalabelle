@@ -24,7 +24,7 @@
     --destaque-icone: #ffc400;
     /* o "a" em rgba significa alpha, representando a transparência */
     --cor-borda: #c5c3c3;
-
+    --cor-destaque: #000;
 }
 
 
@@ -34,8 +34,9 @@
     --cor-fundo-secundaria: #ffffff;
     --cor-titulo: #000;
     --cor-icone: #2b2929;
-    --cor-borda: #000000;
+    --cor-borda: #ffd477;
     --cor-txt-menu: #000;
+    --cor-destaque: #fff;
 }
 
 
@@ -53,6 +54,124 @@ html [data-theme='light'] .logo {
     scrollbar-width: thin;
     scrollbar-color: transparent;
 }
+
+header {
+    background-color: var(--cor-fundo);
+    width: 100%;
+    height: 17%;
+    /* deixa um embaixo do outro */
+    display: flex;
+
+    /* cria espaço entre itens. trabalha com horizontal */
+    justify-content: space-between;
+
+    /* alinhamento vertical */
+    align-items: center;
+
+    position: fixed;
+    z-index: 200;
+    /* Sobreposição */
+
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--cor-borda);
+
+}
+
+.btn-menu-mobile {
+    background: transparent;
+    color: var(--cor-txt-menu);
+    border: none;
+    margin-left: 1rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* menu mobile (estilo e animação) */
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--cor-borda);
+    z-index: 100;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 9rem;
+    border: 1px solid color(red);
+    transition: ease-in-out 0.3s;
+}
+
+.menu-mobile .menu-lista {
+    width: 100%;
+    padding-top: 0.8rem;
+    text-align: ;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-lista .menu-link:hover {
+    color: var(--cor-destaque);
+}
+
+
+.menu-mobile.active {
+    transform: translateX(0%);
+}
+
+.header-toggle {
+    cursor: pointer;
+    font-size: 2.2rem;
+    color: var(--cor-icone);
+}
+
+.menu-desktop {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: auto;
+}
+
+/* .MENU = UL */
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    align-items: center;
+    margin: auto;
+    /* Espaço entre itens */
+    gap: 20px;
+}
+
+.menu-texto {
+    /* Transformação de texto */
+    text-transform: capitalize;
+    font-size: 2rem;
+    /* = 18px */
+    /* OU 1.8rem = 18px */
+    /* Cada REM tem 16px */
+    letter-spacing: 0.2rem;
+    font-family: var(--fonte-menun);
+
+}
+
+.menu-link {
+    color: var(--cor-txt-menu);
+}
+
+/* Herança */
+.menu-link.active .menu-texto,
+.menu-link:hover {
+    color: var(--cor-destaque);
+}
+
+.menu-link {
+    text-decoration: none;
+}
+
 
 .carousel .carousel-item {
     margin-top: 6rem;
@@ -145,31 +264,20 @@ html [data-theme='light'] .logo {
     color: var(--cor-titulo);
 }
 
+.card-item span {
+    color: var(--cor-txt-menu);
+    font-size: 1.3rem;
+}
+/* .card-item span:hover {
+        transition: ease-in-out 0.3s;
+    font-size: 1.6rem;
+}
+ */
 #body {
     background-color: var(--cor-fundo-secundaria);
 }
 
-header {
-    background-color: var(--cor-fundo);
-    width: 100%;
-    height: 20%;
-    /* deixa um embaixo do outro */
-    display: flex;
 
-    /* cria espaço entre itens. trabalha com horizontal */
-    justify-content: space-between;
-
-    /* alinhamento vertical */
-    align-items: center;
-
-    position: fixed;
-    z-index: 200;
-    /* Sobreposição */
-
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--cor-borda);
-
-}
 
 .contato {
     display: flex;
@@ -266,56 +374,6 @@ p {
     padding: 0;
     width: 13rem;
     height: 13rem;
-}
-
-.header-toggle {
-    cursor: pointer;
-    font-size: 2.2rem;
-    color: var(--cor-icone);
-}
-
-.menu-desktop {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin: auto;
-}
-
-/* .MENU = UL */
-.menu {
-    display: flex;
-    list-style: none;
-    justify-content: end;
-    align-items: center;
-    margin: auto;
-    /* Espaço entre itens */
-    gap: 20px;
-}
-
-.menu-texto {
-    /* Transformação de texto */
-    text-transform: capitalize;
-    font-size: 2rem;
-    /* = 18px */
-    /* OU 1.8rem = 18px */
-    /* Cada REM tem 16px */
-    letter-spacing: 0.2rem;
-    font-family: var(--fonte-menun);
-
-}
-
-.menu-link {
-    color: var(--cor-txt-menu);
-}
-
-/* Herança */
-.menu-link.active .menu-texto,
-.menu-link:hover {
-    color: var(--cor-destaque);
-}
-
-.menu-link {
-    text-decoration: none;
 }
 
 /* HOME */
@@ -415,7 +473,7 @@ p {
 }
 
 .card-body span {
-    var(--destaque-icone);
+    color: var(--destaque-icone);
 }
 
 .card-body i:hover {
@@ -495,6 +553,11 @@ p {
         margin-top: -2rem;
     }
 
+    header .menu-texto {
+        display: none;
+    }
+
+
     #home,
     .projetos,
     .contato {
@@ -514,6 +577,11 @@ p {
         padding: 1rem 10rem;
         justify-content: flex-start;
         gap: 2rem;
+        font-size: 1rem;
+    }
+
+    .btn-menu-mobile {
+        display: none;
     }
 
     .menu-desktop {
