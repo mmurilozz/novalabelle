@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuMobile = document.getElementById('menuMobile');
     // Verificação ou condição
     const icon = menuHamburger?.querySelector('i');
-
-
+    /* todas as classes menu-link do HTML */
+    const menuLinks = document.querySelectorAll ('.menu-link');
 
 
     // Função mudar a cor do tema
@@ -45,5 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
         menuHamburger.addEventListener('click', toggleMenu);
     }
 
+    /* Ativar link clicado == menu */
+    menuLinks.forEach (item => {
+    item.addEventListener('click', () => {
+        menuLinks.forEach (i => i.classList.remove('active'));
+        item.classList.add('active');
+    });        
+    });
 
 });
